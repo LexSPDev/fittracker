@@ -15,7 +15,22 @@ export const WrapperProfile = styled.section`
     }
 
 `
+export const WrapperProfileBody = styled.section`
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        span {
+            margin: 30px 0 30px 30px 
+        }
+        div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px 0 0 ;
+        }
+    
 
+`
 export const WrapperPortions = styled.div`
 @media (min-width: 600px) {
     display: grid;
@@ -27,7 +42,7 @@ export const WrapperPortion = styled.div`
     margin:  30px 50px;
     justify-content: space-between;
     align-items: center;
-        span:nth-child(1){
+        span:nth-of-type(1n){
             font-weight: 600;
             text-align: left;
         }
@@ -39,12 +54,15 @@ export const WrapperPortion = styled.div`
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            span:nth-child(2){
+            span:nth-of-type(2n){
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 margin:  10px;
                 width:   100%;
+                button{
+                    margin: 10px;
+                }
             }
         }
 `
