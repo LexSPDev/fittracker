@@ -8,13 +8,17 @@ import { Portions } from './components/Portions'
 import { Register } from './components/Register'
 const Title = styled.h1`
   color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `
 
 
 function App()  {
 
   return (
-    <Layout>
+    <>
       <Title><i className="ph-cooking-pot"></i>Fit Tracker</Title>
       <BrowserRouter>
         <Routes>
@@ -25,7 +29,7 @@ function App()  {
           <Route path='*' element={ <h2> 404 </h2> }/>
         </Routes>
       </BrowserRouter>
-    </Layout>
+    </>
   )
 }
 export default App;

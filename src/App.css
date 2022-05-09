@@ -5,6 +5,7 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  color: var(--primary);
 }
 
 :root{
@@ -13,6 +14,5 @@ body {
   --third: #9100DB;
   --fourth: #6F8F00;
   --fifth: #AADB00;
-  --light: #5F008F 10;
-  
+  --light: #5F008F;
 }
