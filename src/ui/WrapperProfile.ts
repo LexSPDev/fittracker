@@ -29,8 +29,7 @@ export const WrapperProfileBody = styled.section`
             padding: 0 30px 0 0 ;
         }
 `
-export const WrapperPortions = styled.div`
-@media (min-width: 600px) {
+export const WrapperPortions = styled.div`@media (min-width: 600px) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
