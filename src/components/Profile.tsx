@@ -24,7 +24,7 @@ export const Profile = () => {
       </div>
       <div>
         <span>Email</span>
-        <span>lexdev@gmail.com</span>
+        <span>Alex@Roque.com</span>
       </div>
       <div>
         <span>Pasword</span>

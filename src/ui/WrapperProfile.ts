@@ -26,10 +26,8 @@ export const WrapperProfileBody = styled.section`
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 50px 0 0 ;
+            padding: 0 30px 0 0 ;
         }
-    
-
 `
 export const WrapperPortions = styled.div`
 @media (min-width: 600px) {
@@ -65,4 +63,30 @@ export const WrapperPortion = styled.div`
                 }
             }
         }
+        button{
+            height: 50px;
+        }
+`
+export const WrapperSetPortion = styled.div`
+    display: flex;
+    padding: 0 30px;
+    justify-content: space-between;
+    align-items: baseline;
+    @media (min-width: 600px) {
+        padding: 0 380px
+    }
+    input{
+        border-style: none;
+        border-bottom: 1px solid var(--primary);
+        text-align: center;
+        width: 20%;
+    }
+`
+
+export const Error = styled.span`
+    color: red;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px
 `

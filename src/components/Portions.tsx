@@ -1,5 +1,3 @@
-import React from 'react'
-import { Button } from '../ui/Button'
 import { ButtonC } from '../ui/ButtonC'
 import { LOButton } from '../ui/LOButton'
 import { Nav } from '../ui/nav'
