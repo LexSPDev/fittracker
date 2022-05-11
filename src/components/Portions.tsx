@@ -1,11 +1,14 @@
 import { ButtonC } from '../ui/ButtonC'
 import { LOButton } from '../ui/LOButton'
 import { Nav } from '../ui/nav'
+import { PortionsCounter } from '../ui/PortionsCounter'
 import { ProfilePic } from '../ui/ProfilePic'
 import { Wrapper } from '../ui/Wrapper'
 import { WrapperPortion, WrapperPortions, WrapperProfile } from '../ui/WrapperProfile'
+import MyCounter from './MyCounter'
 
 export const Portions = () => {
+
   return (
     <div>
       <Nav> 
@@ -18,38 +21,14 @@ export const Portions = () => {
           <span>06/05/2022</span>
         </WrapperProfile>
         <WrapperPortions>
-        <WrapperPortion>
-            <span>Proteina</span>
-            <span> <ButtonC>+</ButtonC> <span> 5 </span> <ButtonC>-</ButtonC>  </span>
-        </WrapperPortion>
-        <WrapperPortion>
-            <span>Vegetales</span>
-            <span> <ButtonC>+</ButtonC> <span> 5 </span> <ButtonC>-</ButtonC>  </span>
-        </WrapperPortion>
-        <WrapperPortion>
-            <span>Frutas</span>
-            <span> <ButtonC>+</ButtonC> <span> 5 </span> <ButtonC>-</ButtonC>  </span>
-        </WrapperPortion>
-        <WrapperPortion>
-            <span>Cereales</span>
-            <span> <ButtonC>+</ButtonC> <span> 5 </span> <ButtonC>-</ButtonC>  </span>
-        </WrapperPortion>
-        <WrapperPortion>
-            <span>Grasa con proteina</span>
-            <span> <ButtonC>+</ButtonC> <span> 5 </span> <ButtonC>-</ButtonC>  </span>
-        </WrapperPortion>
-        <WrapperPortion>
-            <span>Grasa sin proteina</span>
-            <span> <ButtonC>+</ButtonC> <span> 5 </span> <ButtonC>-</ButtonC>  </span>
-        </WrapperPortion>
-        <WrapperPortion>
-            <span>Lacteos</span>
-            <span> <ButtonC>+</ButtonC> <span> 5 </span> <ButtonC>-</ButtonC>  </span>
-        </WrapperPortion>
-        <WrapperPortion>
-            <span>Endulzantes</span>
-            <span> <ButtonC>+</ButtonC> <span> 5 </span> <ButtonC>-</ButtonC>  </span>
-        </WrapperPortion>
+          <MyCounter nombre='Proteina'></MyCounter>
+          <MyCounter nombre='Vegetales'></MyCounter>
+          <MyCounter nombre='Frutas'></MyCounter>
+          <MyCounter nombre='Cereales'></MyCounter>
+          <MyCounter nombre='Grasas con proteina'></MyCounter>
+          <MyCounter nombre='Grasas sin proteina'></MyCounter>
+          <MyCounter nombre='Lacteos'></MyCounter>
+          <MyCounter nombre='Endulzantes'></MyCounter>
         </WrapperPortions>
       </Wrapper>
     </div>
