@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 export const PortionsCounter = styled.span`
+    
     span {
         font-size:32px;
     }

@@ -1,10 +1,8 @@
-import React from 'react'
-import { ButtonC } from '../ui/ButtonC'
 import { LOButton } from '../ui/LOButton'
 import { Nav } from '../ui/nav'
 import { ProfilePic } from '../ui/ProfilePic'
 import { Wrapper } from '../ui/Wrapper'
-import { WrapperPortion, WrapperPortions, WrapperProfile, WrapperProfileBody } from '../ui/WrapperProfile'
+import { WrapperProfile, WrapperProfileBody } from '../ui/WrapperProfile'
 
 export const Profile = () => {
   return (

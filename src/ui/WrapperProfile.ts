@@ -71,6 +71,47 @@ export const WrapperPortion = styled.div`
             height: 50px;
         }
 `
+export const WrapperPortion2 = styled.div`
+    display: flex; 
+    margin:  30px 50px;
+    justify-content: space-between;
+    align-items: center;
+        span:nth-of-type(1n){
+            font-weight: 600;
+            text-align: left;
+        }
+        p span{
+            font-size: 20px;
+            width: 50px 
+        }
+        span:nth-of-type(2n){
+            height:50px
+        }
+        @media (min-width: 600px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            span:nth-of-type(1n){
+                height: 45px;
+            }
+            span:nth-of-type(2n){
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin:  10px;
+                button{
+                    margin: 10px;
+                }
+                font-weight: 20px
+            }
+            span:nth-of-type(3n){
+                font-weight: 20px
+            }
+        }
+        button{
+            height: 50px;
+        }
+`
 export const WrapperSetPortion = styled.div`
     display: flex;
     padding: 0 30px;
@@ -92,5 +133,5 @@ export const Error = styled.span`
     text-align: center;
     display: flex;
     justify-content: center;
-    margin-bottom: 10px
+    margin-bottom: 50px
 `

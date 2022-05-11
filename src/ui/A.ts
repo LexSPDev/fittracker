@@ -8,5 +8,8 @@ export const A = styled.a`
     margin-bottom: 40px;
     text-align: right;
     margin-top: 80px;
-
+    margin-right: 50px;
+    @media (min-width: 600px) {
+        margin-right: 60px;
+    }
 `

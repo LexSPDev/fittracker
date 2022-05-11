@@ -1,10 +1,8 @@
-import { ButtonC } from '../ui/ButtonC'
 import { LOButton } from '../ui/LOButton'
 import { Nav } from '../ui/nav'
-import { PortionsCounter } from '../ui/PortionsCounter'
 import { ProfilePic } from '../ui/ProfilePic'
 import { Wrapper } from '../ui/Wrapper'
-import { WrapperPortion, WrapperPortions, WrapperProfile } from '../ui/WrapperProfile'
+import { WrapperPortions, WrapperProfile } from '../ui/WrapperProfile'
 import MyCounter from './MyCounter'
 
 export const Portions = () => {

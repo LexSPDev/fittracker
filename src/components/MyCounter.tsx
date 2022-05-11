@@ -1,5 +1,5 @@
 import { FC, useState } from 'react'
-import { Error, WrapperPortion } from '../ui/WrapperProfile'
+import { Error, WrapperPortion, WrapperPortion2 } from '../ui/WrapperProfile'
 import { PortionsCounter } from '../ui/PortionsCounter'
 import { ButtonC } from '../ui/ButtonC'
 import styled from "@emotion/styled";
@@ -44,14 +44,14 @@ const MyCounter : FC<any> = ({nombre, datos}) => {
     }
   return (
       <Wrapper>
-        <WrapperPortion>
+        <WrapperPortion2>
             <span>{ nombre }</span>
             <PortionsCounter> 
-                <ButtonC onClick={suma}>+</ButtonC> 
+                <ButtonC onClick={resta}>-</ButtonC> 
                 <span> {count} </span> 
-                <ButtonC onClick={resta}>-</ButtonC>  
+                <ButtonC onClick={suma}>+</ButtonC>  
             </PortionsCounter>
-        </WrapperPortion>
+        </WrapperPortion2>
             {error() && <Error>{errorMessage()}</Error>}
       </Wrapper>
   )

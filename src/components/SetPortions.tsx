@@ -17,7 +17,7 @@ export const SetPortions: FC<any> = () => {
         lacteos: yup.number().typeError('Debe ser un número').positive('el numero deber ser positivo'),
         endulzantes: yup.number().typeError('Debe ser un número').positive('el numero deber ser positivo'),
       })
-  const { register, handleSubmit, watch, formState: { errors } } = useForm({
+  const { register, handleSubmit,formState: { errors } } = useForm({
     mode:'onBlur',
     resolver: yupResolver(valSchema)
   });;
