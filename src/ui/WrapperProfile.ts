@@ -28,6 +28,7 @@ export const WrapperProfileBody = styled.section`
             align-items: center;
             padding: 0 30px 0 0 ;
         }
+        
 `
 export const WrapperPortions = styled.div`@media (min-width: 600px) {
     display: grid;
@@ -60,6 +61,10 @@ export const WrapperPortion = styled.div`
                 button{
                     margin: 10px;
                 }
+                font-weight: 20px
+            }
+            span:nth-of-type(3n){
+                font-weight: 20px
             }
         }
         button{

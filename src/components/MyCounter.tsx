@@ -1,19 +1,59 @@
-import React, { FC } from 'react'
-import { WrapperPortion, WrapperPortions, WrapperProfile } from '../ui/WrapperProfile'
+import { FC, useState } from 'react'
+import { Error, WrapperPortion } from '../ui/WrapperProfile'
 import { PortionsCounter } from '../ui/PortionsCounter'
 import { ButtonC } from '../ui/ButtonC'
-const MyCounter : FC<any> = ({nombre}) => {
+import styled from "@emotion/styled";
+
+export const Wrapper = styled.span`
+@media (min-width: 600px) {
+    display: flex;
+    flex-direction: column;
+}
+`
+const MyCounter : FC<any> = ({nombre, datos}) => {
+    const [count, setCount] = useState(datos.actual);
     const suma =  () => {
-        console.log('suma 1', nombre)
+        setCount(count + 1);
+        error();
+        console.log(error())
       }
       const resta =  () => {
-        console.log('resta 1', nombre)
+          if(count > 0 ){
+              setCount(count - 1);
+          }
       }
+    const error = () => {
+        if(count < datos.limite){
+            return false
+        }
+        if(count === datos.limite){
+            return true
+        }
+        if(count > datos.limite){
+            return true
+        } 
+    }
+    const errorMessage = () => {
+
+        if(count === datos.limite){
+            return `Se alcanzo el limite de ${nombre}`
+        }
+        if(count > datos.limite){
+            return `El limite de ${nombre} es de ${datos.limite}`
+        } 
+    }
   return (
-    <WrapperPortion>
-    <span>{ nombre }</span>
-    <PortionsCounter> <ButtonC onClick={suma}>+</ButtonC> <span> 5 </span> <ButtonC onClick={resta}>-</ButtonC>  </PortionsCounter>
-</WrapperPortion>
+      <Wrapper>
+        <WrapperPortion>
+            <span>{ nombre }</span>
+            <PortionsCounter> 
+                <ButtonC onClick={suma}>+</ButtonC> 
+                <span> {count} </span> 
+                <ButtonC onClick={resta}>-</ButtonC>  
+            </PortionsCounter>
+        </WrapperPortion>
+            {error() && <Error>{errorMessage()}</Error>}
+      </Wrapper>
   )
 }
 
