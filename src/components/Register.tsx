@@ -8,6 +8,14 @@ import { FC } from "react";
 import { useForm } from "react-hook-form";
 import { WrapperPortion } from "../ui/WrapperProfile"
 import { AuthInput } from "./AuthInput"
+
+import  app, { db }  from '../firebase/firebase.config'
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth'
+import { addDoc, collection, getFirestore } from "firebase/firestore";
+
+
+const auth = getAuth(app)
+
 export const Register: FC<any> = () => {
   const valSchema = yup.object().shape({
     email: yup.string().email('El formato es incorrecto').required('El campo es requerido'),
@@ -18,7 +26,26 @@ export const Register: FC<any> = () => {
     mode:'onBlur',
     resolver: yupResolver(valSchema)
   });
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = (data: any) => {
+    createUserWithEmailAndPassword(auth, data.email, data.password).then(
+      (result) => {
+          console.log('Se registro correctamente')
+          console.log(result.user)
+          createUserData(result.user)
+      })
+      .catch((error)=>{
+        console.log(error)
+      })
+  };
+  const usersCollection = collection(db, 'users');
+  const createUserData = async (user: any )=>{
+    addDoc(usersCollection,{
+      username: user.displayName,
+      email: user.email,
+      profile_picture : user.photoURL,
+      uid: user.uid,
+    });
+  }
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
     <Layout>
@@ -35,7 +62,7 @@ export const Register: FC<any> = () => {
                 register={register}
                 error={errors.password}></AuthInput>
       <AuthInput  id='passwordConfirm' 
-                type='passwordConfirm' 
+                type='pasword' 
                 name='passwordConfirm' 
                 label="Confirma contraseña" 
                 register={register}

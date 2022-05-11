@@ -8,6 +8,10 @@ import { FC } from "react";
 import { useForm } from "react-hook-form";
 import { WrapperPortion } from "../ui/WrapperProfile"
 import { AuthInput } from "./AuthInput"
+import  app, { db }  from '../firebase/firebase.config'
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+
+const auth = getAuth(app)
 
 export const Login: FC<any> = () => {
   const valSchema = yup.object().shape({
@@ -18,7 +22,17 @@ export const Login: FC<any> = () => {
     mode:'onBlur',
     resolver: yupResolver(valSchema)
   });
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = async (data: any) => {
+    console.log(data)
+      await signInWithEmailAndPassword(auth, data.email, data.password).then(
+        (result) => {
+            console.log('Se inicio sesion correctamente')
+            console.log(result)
+        })
+        .catch((error)=>{
+          console.log(error)
+        })
+  };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Layout>
